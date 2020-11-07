@@ -13,7 +13,7 @@ void screen_show(System_props* game, Button_Parent** buttons)
    struct timespec tw = {0, 25000000};
    struct timespec tr;
    nanosleep (&tw, &tr);
-   gfx_open(SCREEN_XSIZE, SCREEN_YSIZE, "Lucky numbers");    
+   gfx_open(SCREEN_XSIZE, SCREEN_YSIZE, "RNC 1.0.1");    
    char alarm;
    int current_action = 0;
    do {
