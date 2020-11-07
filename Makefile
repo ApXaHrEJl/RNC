@@ -27,7 +27,7 @@ obj/main.o: src/main.cpp
 clean:
 	rm -rf bin/ obj/ userdata/
 
-launch:
+run:
 	./bin/game
 
 PHONY: all clean

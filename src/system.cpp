@@ -191,6 +191,9 @@ void System_props::load_game()
         savedata.close();
         if ((value < 1000000) && (value >= 0)) {
             money = value;
+            if (bet > money) {
+                bet = money;
+            }
         } else {
             cout << "Bad data format" << endl;
         }

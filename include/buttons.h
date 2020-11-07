@@ -20,8 +20,8 @@ class Button_Parent
         : x(set_x), y(set_y), size(1), name(set_name) {id = last_id; last_id++;}
     void event(System_props* game);
     virtual ~Button_Parent();
-    virtual void onclick(System_props* game);
-    virtual void drawing(System_props* game);
+    virtual void onclick(System_props* game) = 0;
+    virtual void drawing(System_props* game) = 0;
 };
 
 class Button_Persistent : public Button_Parent
@@ -48,5 +48,9 @@ class Button : public Button_Parent
     virtual void onclick(System_props* game);
     virtual void drawing(System_props* game);
 };
+
+void buttons_init(Button_Parent** buttons);
+
+void buttons_clear(Button_Parent** buttons);
 
 #endif
