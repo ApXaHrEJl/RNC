@@ -1,12 +1,14 @@
 #include <buttons.hpp>
+#include <ctime>
 #include <drawing.hpp>
 #include <gfx.hpp>
-#include <system.hpp>
-#include <ctime>
 #include <iostream>
+#include <system.hpp>
 
 #define SCREEN_XSIZE 640
 #define SCREEN_YSIZE 480
+
+namespace rnc {
 
 void screen_show(System_props* game, Button_Parent** buttons) {
   struct timespec tw = {0, 25000000};
@@ -34,3 +36,5 @@ void screen_show(System_props* game, Button_Parent** buttons) {
     nanosleep(&tw, &tr);
   } while (game->iseog() != 1);
 }
+
+}  // namespace rnc

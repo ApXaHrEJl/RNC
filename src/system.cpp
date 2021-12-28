@@ -1,10 +1,12 @@
 #include <buttons.hpp>
-#include <drawing.hpp>
-#include <system.hpp>
-#include <ctime>
 #include <cstdio>
+#include <ctime>
+#include <drawing.hpp>
 #include <fstream>
 #include <iostream>
+#include <system.hpp>
+
+namespace rnc {
 
 void System_props::draw_interface() {
   gfx_clear_color(45, 45, 45);
@@ -200,3 +202,5 @@ void System_props::load_game() {
     cout << "Savedata not found" << endl;
   }
 }
+
+}  // namespace rnc

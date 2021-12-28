@@ -1,8 +1,10 @@
 #include <buttons.hpp>
 #include <drawing.hpp>
 #include <gfx.hpp>
-#include <system.hpp>
 #include <iostream>
+#include <system.hpp>
+
+namespace rnc {
 
 void Button_Persistent ::drawing(System_props* game) {
   int y2 = y + 32;
@@ -226,5 +228,7 @@ void buttons_clear(Button_Parent** buttons) {
   delete buttons;
 }
 
-int Button_Parent ::last_id = 0;
+int Button_Parent::last_id = 0;
+
+}  // namespace rnc
 

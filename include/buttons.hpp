@@ -1,10 +1,12 @@
-#ifndef H_BUTTONS
-#define H_BUTTONS
-#include <system.hpp>
+#pragma once
+
 #include <cstddef>
 #include <string>
+#include <system.hpp>
 
 using namespace std;
+
+namespace rnc {
 
 class Button_Parent {
  protected:
@@ -57,4 +59,4 @@ void buttons_init(Button_Parent** buttons);
 
 void buttons_clear(Button_Parent** buttons);
 
-#endif
+}  // namespace rnc

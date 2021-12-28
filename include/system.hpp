@@ -1,5 +1,6 @@
-#ifndef H_SYSTEM_PROPS
-#define H_SYSTEM_PROPS
+#pragma once
+
+namespace rnc {
 
 class System_props {
  private:
@@ -41,4 +42,4 @@ class System_props {
   void save_game();
 };
 
-#endif
+}  // namespace rnc

@@ -4,6 +4,8 @@
 
 using namespace std;
 
+namespace rnc {
+
 void draw_symbol(int x, int y, char symb) {
   switch (symb) {
     case 'a':
@@ -320,3 +322,4 @@ void draw_button(int x1, int y1, int x2, int y2, int cond) {
   draw_rectangle(x1 + 2, y1 + 2, x2 - 2, y2 - 2);
 }
 
+}  // namespace rnc
