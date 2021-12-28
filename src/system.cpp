@@ -22,20 +22,20 @@ void System_props::draw_interface() {
       draw_text(187, 148, "game settings");
       draw_text(187, 204, "prize:");
       draw_text(187, 220, prize);
-      draw_text(119, 268, "bet: " + to_string(bet));
-      draw_text(255, 268, "chance: " + to_string(chance));
+      draw_text(119, 268, "bet: " + std::to_string(bet));
+      draw_text(255, 268, "chance: " + std::to_string(chance));
       draw_text(455, 148, "play");
-      draw_text(391, 340, "0-" + to_string((int)(9999.99 * chance)));
+      draw_text(391, 340, "0-" + std::to_string((int)(9999.99 * chance)));
       draw_text(
           519,
           340,
-          to_string((int)((9999.99 * (100 - chance)) + 1)) + "-999999");
+          std::to_string((int)((9999.99 * (100 - chance)) + 1)) + "-999999");
       draw_rectangle(51, 160, 587, 416);
       gfx_line(323, 160, 323, 416);
       if (last_seed >= 0) {
         draw_text(455, 204, "last game result:");
         draw_text(455, 220, last_seed);
-        string res;
+        std::string res;
         if (result == 0) {
           gfx_color(255, 0, 0);
           res = "you lose";
@@ -175,17 +175,17 @@ void System_props::check_balance() {
 }
 
 void System_props::save_game() {
-  ofstream savedata("userdata/savedata");
+  std::ofstream savedata("userdata/savedata");
   if (savedata.is_open()) {
     savedata << money;
     savedata.close();
   } else {
-    cout << "Savedata not found" << endl;
+    std::cout << "Savedata not found\n";
   }
 }
 
 void System_props::load_game() {
-  ifstream savedata("userdata/savedata");
+  std::ifstream savedata("userdata/savedata");
   if (savedata.is_open()) {
     double value;
     savedata >> value;
@@ -196,10 +196,10 @@ void System_props::load_game() {
         bet = money;
       }
     } else {
-      cout << "Bad data format" << endl;
+      std::cout << "Bad data format\n";
     }
   } else {
-    cout << "Savedata not found" << endl;
+    std::cout << "Savedata not found\n";
   }
 }
 

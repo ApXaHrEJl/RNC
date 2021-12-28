@@ -3,13 +3,11 @@
 #include <gfx.hpp>
 #include <string>
 
-using namespace std;
-
 namespace rnc {
 
 void draw_symbol(int x, int y, char symb);
 
-void draw_text(int x, int y, string text);
+void draw_text(int x, int y, std::string text);
 
 void draw_text(int x, int y, int value);
 

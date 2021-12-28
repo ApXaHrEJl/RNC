@@ -2,8 +2,6 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 namespace rnc {
 
 void draw_symbol(int x, int y, char symb) {
@@ -269,7 +267,7 @@ void draw_symbol(int x, int y, char symb) {
   }
 }
 
-void draw_text(int x, int y, const string text) {
+void draw_text(int x, int y, const std::string text) {
   x -= (text.size() * 7) / 2;
   for (size_t i = 0; i < text.size(); i++) {
     draw_symbol(x + (7 * i), y, text[i]);
@@ -277,7 +275,7 @@ void draw_text(int x, int y, const string text) {
 }
 
 void draw_text(int x, int y, int value) {
-  draw_text(x, y, to_string(value));
+  draw_text(x, y, std::to_string(value));
 }
 
 void draw_text(int x, int y, double value) {
@@ -288,7 +286,7 @@ void draw_text(int x, int y, double value) {
     buf = buf / 10;
   }
   buf = (int)(value * 100);
-  string text = to_string(buf);
+  std::string text = std::to_string(buf);
   if (buf < 100) {
     text = "0" + text;
   }
