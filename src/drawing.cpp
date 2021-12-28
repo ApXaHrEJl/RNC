@@ -1,4 +1,4 @@
-#include <gfx.h>
+#include <gfx.hpp>
 #include <iostream>
 #include <string>
 

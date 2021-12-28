@@ -1,7 +1,7 @@
-#include <buttons.h>
-#include <drawing.h>
-#include <system.h>
-#include <time.h>
+#include <buttons.hpp>
+#include <drawing.hpp>
+#include <system.hpp>
+#include <ctime>
 #include <cstdio>
 #include <fstream>
 #include <iostream>

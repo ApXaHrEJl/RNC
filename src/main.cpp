@@ -1,5 +1,5 @@
-#include <buttons.h>
-#include <screen.h>
+#include <buttons.hpp>
+#include <screen.hpp>
 
 int main() {
   Button_Parent** buttons = new Button_Parent*[21];

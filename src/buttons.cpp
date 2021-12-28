@@ -1,7 +1,7 @@
-#include <buttons.h>
-#include <drawing.h>
-#include <gfx.h>
-#include <system.h>
+#include <buttons.hpp>
+#include <drawing.hpp>
+#include <gfx.hpp>
+#include <system.hpp>
 #include <iostream>
 
 void Button_Persistent ::drawing(System_props* game) {

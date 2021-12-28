@@ -1,8 +1,8 @@
-#include <buttons.h>
-#include <drawing.h>
-#include <gfx.h>
-#include <system.h>
-#include <time.h>
+#include <buttons.hpp>
+#include <drawing.hpp>
+#include <gfx.hpp>
+#include <system.hpp>
+#include <ctime>
 #include <iostream>
 
 #define SCREEN_XSIZE 640

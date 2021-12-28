@@ -1,6 +1,6 @@
 #ifndef H_BUTTONS
 #define H_BUTTONS
-#include <system.h>
+#include <system.hpp>
 #include <cstddef>
 #include <string>
 
