@@ -1,5 +1,5 @@
-#include "system.h"
-#include "drawing.h"
+#include <system.h>
+#include <drawing.h>
 #include <time.h>
 #include <cstdio>
 #include <iostream>

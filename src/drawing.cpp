@@ -1,5 +1,5 @@
 #include <iostream>
-#include "gfx.h"
+#include <gfx.h>
 #include <string>
 using namespace std;
 

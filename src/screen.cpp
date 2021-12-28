@@ -1,12 +1,11 @@
 #include <iostream>
 #include <time.h>
-#include "drawing.h"
-#include "gfx.h"
-#include "system.h"
-#include "buttons.h"
+#include <drawing.h>
+#include <gfx.h>
+#include <system.h>
+#include <buttons.h>
 #define SCREEN_XSIZE 640
 #define SCREEN_YSIZE 480
-#define N 10
 
 void screen_show(System_props* game, Button_Parent** buttons)
 {

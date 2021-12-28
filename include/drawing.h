@@ -1,6 +1,6 @@
 #ifndef H_DRAWING
 #define H_DRAWING
-#include "gfx.h"
+#include <gfx.h>
 #include <string>
 using namespace std;
 
