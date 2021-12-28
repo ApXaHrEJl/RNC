@@ -2,6 +2,7 @@
 #define H_DRAWING
 #include <gfx.h>
 #include <string>
+
 using namespace std;
 
 void draw_symbol(int x, int y, char symb);

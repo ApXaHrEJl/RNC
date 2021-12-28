@@ -1,11 +1,11 @@
+#include <buttons.h>
 #include <screen.h>
 
-int main()
-{   
-    Button_Parent** buttons = new Button_Parent*[21];
-    buttons_init(buttons);
-    System_props game;
-    screen_show(&game, buttons);
-    buttons_clear(buttons);
-    return 0;
+int main() {
+  Button_Parent** buttons = new Button_Parent*[21];
+  buttons_init(buttons);
+  System_props game;
+  screen_show(&game, buttons);
+  buttons_clear(buttons);
+  return 0;
 }
