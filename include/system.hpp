@@ -2,14 +2,14 @@
 
 namespace rnc {
 
-class System_props {
+class System {
  private:
   int current_room, seed, bet, last_seed, chance;
   bool result, eog;
   double money, prize;
 
  public:
-  System_props(
+  System(
       int init_room = 1,
       int init_bet = 5,
       int init_chance = 50,

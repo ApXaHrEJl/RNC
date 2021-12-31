@@ -8,7 +8,7 @@
 
 namespace rnc {
 
-void System_props::draw_interface() {
+void System::draw_interface() {
   gfx_clear_color(45, 45, 45);
   gfx_clear();
   gfx_color(255, 255, 255);
@@ -81,49 +81,49 @@ void System_props::draw_interface() {
   }
 }
 
-void System_props::set_room(int value) {
+void System::set_room(int value) {
   current_room = value;
 }
 
-int System_props::get_room() {
+int System::get_room() {
   return current_room;
 }
 
-void System_props::set_chance(int value) {
+void System::set_chance(int value) {
   chance = value;
   calc_prize();
 }
 
-int System_props::get_chance() {
+int System::get_chance() {
   return chance;
 }
 
-void System_props::set_bet(int value) {
+void System::set_bet(int value) {
   bet = value;
   calc_prize();
 }
 
-int System_props::get_bet() {
+int System::get_bet() {
   return bet;
 }
 
-double System_props::get_money() {
+double System::get_money() {
   return money;
 }
 
-bool System_props::iseog() {
+bool System::iseog() {
   return eog;
 }
 
-void System_props::endofgame() {
+void System::endofgame() {
   eog = 1;
 }
 
-void System_props::calc_prize() {
+void System::calc_prize() {
   prize = bet * (100.00 / chance);
 }
 
-void System_props::generate_seed() {
+void System::generate_seed() {
   if (last_seed == -1) {
     srand(time(NULL));
   }
@@ -131,7 +131,7 @@ void System_props::generate_seed() {
   last_seed = seed;
 }
 
-void System_props::play(int mode) {
+void System::play(int mode) {
   generate_seed();
   money -= bet;
   if (mode == 1) {
@@ -161,20 +161,20 @@ void System_props::play(int mode) {
   }
 }
 
-void System_props::mining() {
+void System::mining() {
   money += ((rand() % 90) / 100.00) + 0.1;
   if (money > 999999.99) {
     money = 999999.99;
   }
 }
 
-void System_props::check_balance() {
+void System::check_balance() {
   if (money < 1) {
     current_room = 2;
   }
 }
 
-void System_props::save_game() {
+void System::save_game() {
   std::ofstream savedata("userdata/savedata");
   if (savedata.is_open()) {
     savedata << money;
@@ -184,7 +184,7 @@ void System_props::save_game() {
   }
 }
 
-void System_props::load_game() {
+void System::load_game() {
   std::ifstream savedata("userdata/savedata");
   if (savedata.is_open()) {
     double value;

@@ -5,6 +5,6 @@
 
 namespace rnc {
 
-void screen_show(System_props* game, Button_Parent** buttons);
+void screen_show(System* game, Button_Parent** buttons);
 
 } // namespace rnc

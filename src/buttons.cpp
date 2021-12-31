@@ -6,7 +6,7 @@
 
 namespace rnc {
 
-void Button_Persistent ::drawing(System_props* game) {
+void Button_Persistent ::drawing(System* game) {
   int y2 = y + 32;
   int x2 = x + (size * 64);
   draw_button(x, y, x2, y2, 1);
@@ -15,7 +15,7 @@ void Button_Persistent ::drawing(System_props* game) {
   draw_text(middle_x, y + 12, name);
 }
 
-void Button::drawing(System_props* game) {
+void Button::drawing(System* game) {
   int cond = condition(game);
   if (cond == -1) {
     return;
@@ -28,7 +28,7 @@ void Button::drawing(System_props* game) {
   draw_text(middle_x, y + 12, name);
 }
 
-int Button ::condition(System_props* game) {
+int Button ::condition(System* game) {
   if (game->get_room() != room) {
     return -1;
   }
@@ -105,14 +105,14 @@ Button_Persistent::~Button_Persistent() {}
 
 Button::~Button() {}
 
-void Button_Persistent::onclick(System_props* game) {
+void Button_Persistent::onclick(System* game) {
   if ((gfx_xpos() >= x) && (gfx_xpos() <= x + (64 * size)) &&
       (gfx_ypos() >= y) && (gfx_ypos() <= y + 32)) {
     event(game);
   }
 }
 
-void Button::onclick(System_props* game) {
+void Button::onclick(System* game) {
   int cond = condition(game);
   if (cond == -1) {
     return;
@@ -123,7 +123,7 @@ void Button::onclick(System_props* game) {
   }
 }
 
-void Button_Parent::event(System_props* game) {
+void Button_Parent::event(System* game) {
   switch (id) {
     case 0:
       game->set_room(1);

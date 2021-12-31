@@ -23,10 +23,10 @@ class Button_Parent {
     id = last_id;
     last_id++;
   }
-  void event(System_props* game);
+  void event(System* game);
   virtual ~Button_Parent();
-  virtual void onclick(System_props* game) = 0;
-  virtual void drawing(System_props* game) = 0;
+  virtual void onclick(System* game) = 0;
+  virtual void drawing(System* game) = 0;
 };
 
 class Button_Persistent : public Button_Parent {
@@ -34,14 +34,14 @@ class Button_Persistent : public Button_Parent {
   Button_Persistent(int set_x, int set_y, std::string set_name)
       : Button_Parent(set_x, set_y, 2, set_name) {}
   virtual ~Button_Persistent();
-  virtual void onclick(System_props* game);
-  virtual void drawing(System_props* game);
+  virtual void onclick(System* game);
+  virtual void drawing(System* game);
 };
 
 class Button : public Button_Parent {
  private:
   int room;
-  int condition(System_props* game);
+  int condition(System* game);
 
  public:
   Button(int set_x, int set_y, int set_size, int set_room, std::string set_name)
@@ -49,8 +49,8 @@ class Button : public Button_Parent {
   Button(int set_x, int set_y, int set_room, std::string set_name)
       : Button_Parent(set_x, set_y, set_name), room(set_room) {}
   virtual ~Button();
-  virtual void onclick(System_props* game);
-  virtual void drawing(System_props* game);
+  virtual void onclick(System* game);
+  virtual void drawing(System* game);
 };
 
 void buttons_init(Button_Parent** buttons);
