@@ -5,7 +5,6 @@
 #define RGB_WHITE 255, 255, 255
 #define RGB_GRAY 100, 100, 100
 
-
 namespace rnc {
 
 void draw_symbol(int x, int y, char symb) {
