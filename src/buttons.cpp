@@ -13,23 +13,23 @@
 namespace rnc {
 
 void Button_Persistent ::drawing(System& game) const {
-  int y2 = y + 32;
-  int x2 = x + (size * 64);
+  const int y2 = y + 32;
+  const int x2 = x + (size * 64);
   draw_button(x, y, x2, y2, 1);
-  int middle_x = x + ((x2 - x) / 2);
+  const int middle_x = x + ((x2 - x) / 2);
   gfx_color(RGB_WHITE);
   draw_text(middle_x, y + 12, name);
 }
 
 void Button::drawing(System& game) const {
-  int cond = condition(game);
+  const int cond = condition(game);
   if (cond == -1) {
     return;
   }
-  int y2 = y + 32;
-  int x2 = x + (size * 64);
+  const int y2 = y + 32;
+  const int x2 = x + (size * 64);
   draw_button(x, y, x2, y2, cond);
-  int middle_x = x + ((x2 - x) / 2);
+  const int middle_x = x + ((x2 - x) / 2);
   gfx_color(RGB_WHITE);
   draw_text(middle_x, y + 12, name);
 }
@@ -105,12 +105,6 @@ int Button ::condition(System& game) const {
   return 0;
 }
 
-Button_Parent::~Button_Parent() {}
-
-Button_Persistent::~Button_Persistent() {}
-
-Button::~Button() {}
-
 void Button_Persistent::onclick(System& game) {
   if ((gfx_xpos() >= x) && (gfx_xpos() <= x + (64 * size)) &&
       (gfx_ypos() >= y) && (gfx_ypos() <= y + 32)) {
@@ -119,7 +113,7 @@ void Button_Persistent::onclick(System& game) {
 }
 
 void Button::onclick(System& game) {
-  int cond = condition(game);
+  const int cond = condition(game);
   if (cond == -1) {
     return;
   }
@@ -239,6 +233,12 @@ void buttons_clear(Button_Parent** buttons)
 }
 
 int Button_Parent::last_id = 0;
+
+Button_Parent::~Button_Parent() {}
+
+Button_Persistent::~Button_Persistent() {}
+
+Button::~Button() {}
 
 }  // namespace rnc
 

@@ -22,24 +22,32 @@ class System {
     eog = 0;
     prize = 10;
   }
-  void calc_prize();
+  void draw_main_frame() const;
+  void draw_main_game_room() const;
+  void draw_miner_room() const;
+  void draw_info_room() const;
+  void draw_interface() const;
+  
+  int get_room() const { return current_room; };
+  int get_chance() const { return chance; }
+  int get_bet() const { return bet; }
+  double get_money() const { return money; }
+  bool iseog() const { return eog; }
+  // int get_seed() const;
+  
   void set_room(int value);
-  int get_room();
   void set_chance(int value);
-  int get_chance();
   void set_bet(int value);
-  int get_bet();
-  double get_money();
-  int get_seed();
-  bool iseog();
-  void endofgame();
-  void mining();
-  void play(int mode);
-  void draw_interface();
+  void calc_prize();
   void generate_seed();
+  void endofgame();
+
+  void play(int mode);
+  void mining();
   void check_balance();
-  void load_game();
+
   void save_game();
+  void load_game();
 };
 
 }  // namespace rnc

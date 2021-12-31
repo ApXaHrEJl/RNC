@@ -20,7 +20,7 @@ void screen_show(System& game, Button_Parent** buttons) {
   int current_action = 0;
   do {
     game.check_balance();
-    int previous = current_action;
+    const int previous = current_action;
     current_action = gfx_event_waiting();
     game.draw_interface();
     for (int i = 0; i < NUM_OF_BUTTONS; i++) {

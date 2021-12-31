@@ -34,9 +34,9 @@ class Button_Persistent : public Button_Parent {
  public:
   Button_Persistent(int set_x, int set_y, std::string set_name)
       : Button_Parent(set_x, set_y, 2, set_name) {}
-  virtual ~Button_Persistent();
-  virtual void onclick(System& game);
-  virtual void drawing(System& game) const;
+  ~Button_Persistent() override;
+  void onclick(System& game) override;
+  void drawing(System& game) const override;
 };
 
 class Button : public Button_Parent {
@@ -49,9 +49,9 @@ class Button : public Button_Parent {
       : Button_Parent(set_x, set_y, set_size, set_name), room(set_room) {}
   Button(int set_x, int set_y, int set_room, std::string set_name)
       : Button_Parent(set_x, set_y, set_name), room(set_room) {}
-  virtual ~Button();
-  virtual void onclick(System& game);
-  virtual void drawing(System& game) const;
+  ~Button() override;
+  void onclick(System& game) override;
+  void drawing(System& game) const override;
 };
 
 Button_Parent** buttons_init();
