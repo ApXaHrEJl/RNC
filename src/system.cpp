@@ -6,12 +6,17 @@
 #include <iostream>
 #include <system.hpp>
 
+#define RGB_WHITE 255, 255, 255
+#define RGB_BLACK 45, 45, 45
+#define RGB_RED 255, 0, 0
+#define RGB_GREEN 0, 255, 0
+
 namespace rnc {
 
 void System::draw_interface() {
-  gfx_clear_color(45, 45, 45);
+  gfx_clear_color(RGB_BLACK);
   gfx_clear();
-  gfx_color(255, 255, 255);
+  gfx_color(RGB_WHITE);
   gfx_line(0, 48, 640, 48);
   gfx_line(0, 432, 640, 432);
   switch (current_room) {
@@ -37,10 +42,10 @@ void System::draw_interface() {
         draw_text(455, 220, last_seed);
         std::string res;
         if (result == 0) {
-          gfx_color(255, 0, 0);
+          gfx_color(RGB_RED);
           res = "you lose";
         } else {
-          gfx_color(0, 255, 0);
+          gfx_color(RGB_GREEN);
           res = "you win";
         }
         draw_text(455, 236, res);

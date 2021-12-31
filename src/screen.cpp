@@ -14,7 +14,7 @@ void screen_show(System* game, Button_Parent** buttons) {
   struct timespec tw = {0, 25000000};
   struct timespec tr;
   nanosleep(&tw, &tr);
-  gfx_open(SCREEN_XSIZE, SCREEN_YSIZE, "RNC 1.0.1");
+  gfx_open(SCREEN_XSIZE, SCREEN_YSIZE, "RNC 2.0.0");
   char alarm;
   int current_action = 0;
   do {

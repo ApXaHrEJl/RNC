@@ -2,6 +2,10 @@
 #include <iostream>
 #include <string>
 
+#define RGB_WHITE 255, 255, 255
+#define RGB_GRAY 100, 100, 100
+
+
 namespace rnc {
 
 void draw_symbol(int x, int y, char symb) {
@@ -310,12 +314,12 @@ void draw_rectangle(int x1, int y1, int x2, int y2) {
 
 void draw_button(int x1, int y1, int x2, int y2, int cond) {
   if (cond == 1) {
-    gfx_color(100, 100, 100);
+    gfx_color(RGB_GRAY);
     for (int i = 1; i < 32; i++) {
       gfx_line(x1, y1 + i, x2, y1 + i);
     }
   }
-  gfx_color(255, 255, 255);
+  gfx_color(RGB_WHITE);
   draw_rectangle(x1, y1, x2, y2);
   draw_rectangle(x1 + 2, y1 + 2, x2 - 2, y2 - 2);
 }

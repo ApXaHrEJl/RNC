@@ -4,6 +4,11 @@
 #include <iostream>
 #include <system.hpp>
 
+#define RGB_WHITE 255, 255, 255
+#define MAX_CHANCE 95
+#define MIN_CHANCE 1
+#define MIN_BET 1
+
 namespace rnc {
 
 void Button_Persistent ::drawing(System* game) {
@@ -11,7 +16,7 @@ void Button_Persistent ::drawing(System* game) {
   int x2 = x + (size * 64);
   draw_button(x, y, x2, y2, 1);
   int middle_x = x + ((x2 - x) / 2);
-  gfx_color(255, 255, 255);
+  gfx_color(RGB_WHITE);
   draw_text(middle_x, y + 12, name);
 }
 
@@ -24,7 +29,7 @@ void Button::drawing(System* game) {
   int x2 = x + (size * 64);
   draw_button(x, y, x2, y2, cond);
   int middle_x = x + ((x2 - x) / 2);
-  gfx_color(255, 255, 255);
+  gfx_color(RGB_WHITE);
   draw_text(middle_x, y + 12, name);
 }
 
@@ -34,7 +39,7 @@ int Button ::condition(System* game) {
   }
   switch (id) {
     case 6:
-      if (game->get_bet() > 1) {
+      if (game->get_bet() > MIN_BET) {
         return 1;
       }
       break;
@@ -44,7 +49,7 @@ int Button ::condition(System* game) {
       }
       break;
     case 8:
-      if (game->get_bet() > 1) {
+      if (game->get_bet() > MIN_BET) {
         return 1;
       }
       break;
@@ -54,7 +59,7 @@ int Button ::condition(System* game) {
       }
       break;
     case 10:
-      if (game->get_bet() > 2) {
+      if (game->get_bet() > MIN_BET) {
         return 1;
       }
       break;
@@ -64,32 +69,32 @@ int Button ::condition(System* game) {
       }
       break;
     case 12:
-      if (game->get_chance() > 1) {
+      if (game->get_chance() > MIN_CHANCE) {
         return 1;
       }
       break;
     case 13:
-      if (game->get_chance() < 95) {
+      if (game->get_chance() < MAX_CHANCE) {
         return 1;
       }
       break;
     case 14:
-      if (game->get_chance() > 1) {
+      if (game->get_chance() > MIN_CHANCE) {
         return 1;
       }
       break;
     case 15:
-      if (game->get_chance() < 95) {
+      if (game->get_chance() < MAX_CHANCE) {
         return 1;
       }
       break;
     case 16:
-      if (game->get_chance() > 1) {
+      if (game->get_chance() > MIN_CHANCE) {
         return 1;
       }
       break;
     case 17:
-      if (game->get_chance() < 95) {
+      if (game->get_chance() < MAX_CHANCE) {
         return 1;
       }
       break;
@@ -144,7 +149,7 @@ void Button_Parent::event(System* game) {
       game->endofgame();
       break;
     case 6:
-      game->set_bet(1);
+      game->set_bet(MIN_BET);
       break;
     case 7:
       game->set_bet(game->get_money());
@@ -165,10 +170,10 @@ void Button_Parent::event(System* game) {
       }
       break;
     case 12:
-      game->set_chance(1);
+      game->set_chance(MIN_CHANCE);
       break;
     case 13:
-      game->set_chance(95);
+      game->set_chance(MAX_CHANCE);
       break;
     case 14:
       game->set_chance(game->get_chance() - 1);
@@ -181,8 +186,8 @@ void Button_Parent::event(System* game) {
       break;
     case 17:
       game->set_chance(game->get_chance() * 2);
-      if (game->get_chance() > 95) {
-        game->set_chance(95);
+      if (game->get_chance() > MAX_CHANCE) {
+        game->set_chance(MAX_CHANCE);
       }
       break;
     case 18:
