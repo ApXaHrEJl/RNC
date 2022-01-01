@@ -6,6 +6,6 @@
 
 namespace rnc {
 
-void screen_show(System& game, Button_Parent** buttons);
+void game_cycle(System& game, Button_Parent** buttons);
 
 } // namespace rnc

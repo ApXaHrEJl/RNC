@@ -1,8 +1,8 @@
 all: bin/game
 
-bin/game: obj/main.o obj/drawing.o obj/gfx.o obj/screen.o obj/buttons.o obj/system.o
+bin/game: obj/main.o obj/drawing.o obj/gfx.o obj/game_cycle.o obj/buttons.o obj/system.o
 	mkdir bin
-	g++ -Wall -Werror obj/main.o obj/gfx.o obj/screen.o obj/buttons.o obj/system.o obj/drawing.o -o bin/game -lX11
+	g++ -Wall -Werror obj/main.o obj/gfx.o obj/game_cycle.o obj/buttons.o obj/system.o obj/drawing.o -o bin/game -lX11
 	mkdir userdata
 
 obj/buttons.o: src/buttons.cpp 
@@ -11,8 +11,8 @@ obj/buttons.o: src/buttons.cpp
 obj/system.o: src/system.cpp 
 	g++ -I include -Wall -Werror -c src/system.cpp -o obj/system.o -lX11
 
-obj/screen.o: src/screen.cpp 
-	g++ -I include -Wall -Werror -c src/screen.cpp -o obj/screen.o -lX11
+obj/game_cycle.o: src/game_cycle.cpp 
+	g++ -I include -Wall -Werror -c src/game_cycle.cpp -o obj/game_cycle.o -lX11
 
 obj/drawing.o: src/drawing.cpp 
 	g++ -I include -Wall -Werror -c src/drawing.cpp -o obj/drawing.o -lX11

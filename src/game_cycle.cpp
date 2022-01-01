@@ -11,7 +11,7 @@
 
 namespace rnc {
 
-void screen_show(System& game, Button_Parent** buttons) {
+void game_cycle(System& game, Button_Parent** buttons) {
   struct timespec tw = {0, 25000000};
   struct timespec tr;
   nanosleep(&tw, &tr);
