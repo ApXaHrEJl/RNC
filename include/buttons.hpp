@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cstddef>
-#include <string>
+#include <string_view>
 #include <system.hpp>
 #include <vector>
 
@@ -9,10 +9,10 @@ namespace rnc {
 
 class Button_Parent {
  protected:
-  const int x; 
+  const int x;
   const int y;
   const int size;
-  const std::string name;
+  std::string_view name;
   int id;
   static int last_id;
 
@@ -21,12 +21,15 @@ class Button_Parent {
       const int set_x,
       const int set_y,
       const int set_size,
-      const std::string set_name)
+      std::string_view set_name)
       : x(set_x), y(set_y), size(set_size), name(set_name) {
     id = last_id;
     last_id++;
   }
-  Button_Parent(const int set_x, const int set_y, const std::string set_name)
+  Button_Parent(
+      const int set_x,
+      const int set_y,
+      std::string_view set_name)
       : x(set_x), y(set_y), size(1), name(set_name) {
     id = last_id;
     last_id++;
@@ -42,7 +45,7 @@ class Button_Persistent : public Button_Parent {
   Button_Persistent(
       const int set_x,
       const int set_y,
-      const std::string set_name)
+      std::string_view set_name)
       : Button_Parent(set_x, set_y, 2, set_name) {}
   ~Button_Persistent() override;
   void onclick(System& game) override;
@@ -60,13 +63,13 @@ class Button : public Button_Parent {
       const int set_y,
       const int set_size,
       const int set_room,
-      const std::string set_name)
+      std::string_view set_name)
       : Button_Parent(set_x, set_y, set_size, set_name), room(set_room) {}
   Button(
       const int set_x,
       const int set_y,
       const int set_room,
-      const std::string set_name)
+      std::string_view set_name)
       : Button_Parent(set_x, set_y, set_name), room(set_room) {}
   ~Button() override;
   void onclick(System& game) override;

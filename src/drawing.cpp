@@ -1,6 +1,7 @@
 #include <gfx.hpp>
 #include <iostream>
 #include <string>
+#include <string_view>
 
 #define RGB_WHITE 255, 255, 255
 #define RGB_GRAY 100, 100, 100
@@ -270,7 +271,7 @@ void draw_symbol(int x, int y, char symb) {
   }
 }
 
-void draw_text(int x, int y, const std::string text) {
+void draw_text(int x, int y, std::string_view text) {
   x -= (text.size() * 7) / 2;
   for (size_t i = 0; i < text.size(); i++) {
     draw_symbol(x + (7 * i), y, text[i]);
