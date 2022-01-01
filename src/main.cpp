@@ -1,11 +1,11 @@
-#include "screen.h"
+#include <buttons.hpp>
+#include <game_cycle.hpp>
+#include <vector>
 
-int main()
-{   
-    Button_Parent** buttons = new Button_Parent*[21];
-    buttons_init(buttons);
-    System_props game;
-    screen_show(&game, buttons);
-    buttons_clear(buttons);
-    return 0;
+int main() {
+  rnc::Button_Parent** buttons = rnc::buttons_init();
+  rnc::System game;
+  rnc::game_cycle(game, buttons);
+  buttons_clear(buttons);
+  return 0;
 }
