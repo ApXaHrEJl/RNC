@@ -33,7 +33,6 @@ class System {
   int get_bet() const { return bet; }
   double get_money() const { return money; }
   bool iseog() const { return eog; }
-  // int get_seed() const;
   
   void set_room(int value);
   void set_chance(int value);
