@@ -86,7 +86,7 @@ void System::draw_info_room() const {
   draw_text(320, 336, "this game is a course project in the discipline");
   draw_text(320, 352, "object-oriented programming");
   draw_text(320, 368, "author: sitnikov danila alekseevich");
-  draw_text(320, 400, "novosibirsk, 2020");
+  draw_text(320, 400, "novosibirsk, 2022");
 }
 
 void System::draw_interface() const {
